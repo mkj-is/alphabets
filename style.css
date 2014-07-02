@@ -1,0 +1,65 @@
+img {
+height: 100%;
+padding: 0px;
+margin: 0px;
+}
+body {
+text-transform: uppercase;
+background-color: white;
+padding: 0px;
+margin: 0px;
+font-family: Helvetica;
+font-weight: bold;
+}
+input {
+text-transform: uppercase;
+position: fixed;
+top: 45%;
+left: 25%;
+height: 10%;
+background-color: inherit;
+font-family: Helvetica;
+font-weight: bold;
+color: black;
+font-size: 3em;
+border: none;
+outline: none;
+}
+#author {
+position: fixed;
+height: 1.5em;
+bottom: 1.5em;
+right: 2em;
+font-size: 1em;
+text-align: right;
+}
+a:hover {
+color: gray;
+}
+select {
+-webkit-appearance: none;
+position: fixed;
+height: 1.5em;
+top: 1.5em;
+right: 1.5em;
+font-size: 1em;
+text-align: right;
+border: none;
+font-family: Helvetica;
+font-weight: bold;
+text-transform: uppercase;
+outline: none;
+background-color: inherit;
+}
+.dark, .dark input, .dark select, .dark a, .dark a:visited {
+color: white;
+}
+.light, .light input, .light select, .light a, .light a:visited {
+color: black;
+}
+.dark {
+background-color: black;
+}
+.light {
+background-color: white;
+}

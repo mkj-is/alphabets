@@ -1,0 +1,18 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
+  <title></title>
+ </head>
+ <body id="body">
+  <form onsubmit="onSubmit(); return false;">
+   <input id="message" type="text" autofocus autocorrect="off" placeholder="WRITE SOMETHING!" onkeyup="onSubmit();" spellcheck='false' />
+   <select id="font" onchange="onSelect(this);">
+     <option>Choose your font...</option>
+   </select>
+  </form>
+  <div id="letters"></div>
+  <div id="author"></div>
+ </body>
+</html>
