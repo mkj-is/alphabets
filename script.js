@@ -79,10 +79,12 @@ function onSubmit() {
     var image = new Image();
     image.src = src;
     image.onload = function() {
-      resize();
+		resize();
+		resizeImages();
     }
     container.appendChild(image);
   }
+	resizeImages();
 }
 
 // when the images are changed
@@ -93,6 +95,8 @@ function resize() {
     var node = container.childNodes[i];
     w += node.offsetWidth;
   }
+  // add some width
+  w += 2;
   container.style.width = w + "px";
 }
 
@@ -111,6 +115,8 @@ function onSelect(node){
   font = fonts[node.value];
   onSubmit();
   metadata();
+  // focus on text to prevent scrolling in select
+  document.getElementById("message").focus();
 }
 
  // script on webpage load
@@ -126,3 +132,15 @@ window.onload = function() {
   };
   metadata();
 }
+
+var resizeImages = function() {
+	var images = document.getElementsByTagName("img");	
+	var height = document.documentElement.clientHeight;
+	for (var i = 0; i < images.length; i++) {
+		var image = images[i];
+		image.style.height = height + "px";
+	}
+}
+
+resizeImages();
+window.onresize = resizeImages;
