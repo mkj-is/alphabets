@@ -175,7 +175,7 @@ function updateFromHash()
 	var f = parts[0];
 	var t = parts[1];
 	f = f.substr(1, f.length - 1);
-	document.getElementById("message").value = t;
+	document.getElementById("message").value = Url.decode(t);
 	
 	var found = findFontByUrl(f);
 	if(found){
