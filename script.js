@@ -40,6 +40,12 @@ var fonts = [
     url: "walk-this-way",
     author: 'Gabriel Ádám',
     color: 'dark'
+  },
+  {
+    name: "Mouka Type",
+    url: "mouka",
+    author: 'Jana Ludvíková',
+    color: 'light'
   }
 ];
 
