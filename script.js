@@ -102,7 +102,8 @@ function resize() {
     w += node.offsetWidth;
   }
   // add some width
-  w += 2;
+  w += 10;
+
   container.style.width = w + "px";
 }
 
@@ -132,11 +133,13 @@ preload(font.url);
 
 window.onload = function() {
   var select = document.getElementById('font');
+  select.innerHTML = "<option>Choose your font...</option>";
   for (var i in fonts) {
     var option = '<option value="' + i + '">' + fonts[i].name + '</option>';
     select.innerHTML += option;
   };
   metadata();
+  onSubmit();
 }
 
 var resizeImages = function() {
