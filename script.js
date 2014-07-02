@@ -22,7 +22,13 @@ var fonts = [
     url: "square",
     author: 'Tomáš Kácel',
     color: 'dark'
-  }
+  },
+  {
+    name: "Klam font",
+    url: "klam",
+    author: 'Petr Vacek',
+    color: 'dark'
+  },
 ];
 
 // shuffles an array
