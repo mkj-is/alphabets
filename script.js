@@ -122,7 +122,6 @@ window.onload = function() {
   var select = document.getElementById('font');
   for (var i in fonts) {
     var option = '<option value="' + i + '">' + fonts[i].name + '</option>';
-    console.log(option);
     select.innerHTML += option;
   };
   metadata();
