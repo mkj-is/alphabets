@@ -29,6 +29,12 @@ var fonts = [
     author: 'Petr Vacek',
     color: 'dark'
   },
+  {
+    name: "It Socks",
+    url: "it-socks",
+    author: 'Gabriel Ádám',
+    color: 'light'
+  },
 ];
 
 // shuffles an array
