@@ -140,6 +140,7 @@ window.onload = function() {
   };
   metadata();
   onSubmit();
+  document.getElementById("message").setAttribute("placeholder", "WRITE SOMETHING!");
 }
 
 var resizeImages = function() {
