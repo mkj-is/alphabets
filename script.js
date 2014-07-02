@@ -35,6 +35,12 @@ var fonts = [
     author: 'Gabriel Ádám',
     color: 'light'
   },
+  {
+    name: "Walk This Way",
+    url: "walk-this-way",
+    author: 'Gabriel Ádám',
+    color: 'dark'
+  }
 ];
 
 // shuffles an array
