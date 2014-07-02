@@ -40,7 +40,9 @@ a:hover {
   color: gray;
 }
 select {
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   position: fixed;
   height: 1.5em;
   top: 1.5em;
