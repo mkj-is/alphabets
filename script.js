@@ -1,47 +1,47 @@
- var fonts = [
-    {
-      name: "Recycle font",
-      url: "recycle",
-      author: 'Made by <a href="http://www.vaclav-mach.cz/">Václav Mach</a> in 2014',
-      color: 'light'
-    },
-    {
-      name: "Bike type",
-      url: "bike",
-      author: 'Made by Michal Fojt, Lenka Horáková, <a href="http://mkj.is">Matěj Kašpar Jirásek</a> in 2014',
-      color: 'dark'
-    },
-    {
-      name: "Duck type",
-      url: "duck",
-      author: 'Made by Michal Fojt, Lenka Horáková, <a href="http://mkj.is">Matěj Kašpar Jirásek</a> in 2014',
-      color: 'dark'
-    }
- ];
- function shuffle(o){
+var fonts = [
+  {
+    name: "Recycle font",
+    url: "recycle",
+    author: '<a href="http://www.vaclav-mach.cz/">Václav Mach</a>',
+    color: 'light'
+  },
+  {
+    name: "Bike type",
+    url: "bike",
+    author: 'Michal Fojt, Lenka Horáková, <a href="http://mkj.is">Matěj Kašpar Jirásek</a>',
+    color: 'dark'
+  },
+  {
+    name: "Duck type",
+    url: "duck",
+    author: 'Michal Fojt, Lenka Horáková, <a href="http://mkj.is">Matěj Kašpar Jirásek</a>',
+    color: 'dark'
+  },
+  {
+    name: "Králíky square",
+    url: "square",
+    author: 'Tomáš Kácel',
+    color: 'dark'
+  }
+];
+
+// shuffles an array
+function shuffle(o){
   for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
   return o;
- };
- fonts = shuffle(fonts);
- var font = fonts[0];
- function preload(font) {
+};
+
+// preloads font with name
+function preload(font) {
   var first = "A", last = "Z";
-    for(var i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
-      var image = new Image();
-      image.src = font + '/' + String.fromCharCode(i) + '.jpg';
-    }
- }
- preload(font.url);
- window.onload = function() {
-  var select = document.getElementById('font');
-  for (var i in fonts) {
-    var option = '<option value="' + i + '">' + fonts[i].name + '</option>';
-    console.log(option);
-    select.innerHTML += option;
-  };
-  metadata();
- }
- function onSubmit() {
+  for(var i = first.charCodeAt(0); i <= last.charCodeAt(0); i++) {
+    var image = new Image();
+    image.src = font + '/' + String.fromCharCode(i) + '.jpg';
+  }
+}
+
+// on submitting the input
+function onSubmit() {
   var text = document.getElementById("message").value;
   text = text.toUpperCase();
   var container = document.getElementById("letters");
@@ -65,8 +65,10 @@
     }
     container.appendChild(image);
   }
- }
- function resize() {
+}
+
+// when the images are changed
+function resize() {
   var container = document.getElementById("letters");
   var w = 0;
   for(var i = 0; i < container.childNodes.length; i++) {
@@ -74,16 +76,36 @@
     w += node.offsetWidth;
   }
   container.style.width = w + "px";
- }
- function metadata(){
+}
+
+
+// change the title, author and colors
+function metadata(){
   document.title = font.name;
   var author = document.getElementById('author');
   author.innerHTML = font.author;
   var body = document.getElementById('body');
   body.setAttribute('class', font.color);
- }
- function onSelect(node){
+}
+
+ // change the font
+function onSelect(node){
   font = fonts[node.value];
   onSubmit();
   metadata();
- }
+}
+
+ // script on webpage load
+fonts = shuffle(fonts);
+var font = fonts[0];
+preload(font.url);
+
+window.onload = function() {
+  var select = document.getElementById('font');
+  for (var i in fonts) {
+    var option = '<option value="' + i + '">' + fonts[i].name + '</option>';
+    console.log(option);
+    select.innerHTML += option;
+  };
+  metadata();
+}
