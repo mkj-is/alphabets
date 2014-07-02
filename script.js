@@ -91,7 +91,10 @@ function onSubmit() {
     container.appendChild(image);
   }
 	resizeImages();
+
 }
+
+
 
 // when the images are changed
 function resize() {
@@ -124,6 +127,8 @@ function onSelect(node){
   metadata();
   // focus on text to prevent scrolling in select
   document.getElementById("message").focus();
+  // setHash
+  setHash();
 }
 
  // script on webpage load
@@ -132,15 +137,17 @@ var font = fonts[0];
 preload(font.url);
 
 window.onload = function() {
+  
   var select = document.getElementById('font');
   select.innerHTML = "<option>Choose your font...</option>";
   for (var i in fonts) {
     var option = '<option value="' + i + '">' + fonts[i].name + '</option>';
     select.innerHTML += option;
   };
-  metadata();
-  onSubmit();
   document.getElementById("message").setAttribute("placeholder", "WRITE SOMETHING!");
+  updateFromHash();
+  onSubmit();
+  metadata();
 }
 
 var resizeImages = function() {
@@ -151,6 +158,44 @@ var resizeImages = function() {
 		image.style.height = height + "px";
 	}
 }
+
+function setHash(){
+	var text = document.getElementById("message").value;
+	if(!text) return;
+	window.location.hash = font.url + "/" + Url.encode(text);
+}
+
+function updateFromHash()
+{
+	if(window.location.hash == "") return;
+	
+	var parts = window.location.hash.split("/", 2);
+	if(!(parts[0] && parts[1])) return;
+	
+	var f = parts[0];
+	var t = parts[1];
+	f = f.substr(1, f.length - 1);
+	document.getElementById("message").value = t;
+	
+	var found = findFontByUrl(f);
+	if(found){
+		font = found;
+	}
+
+}
+
+function findFontByUrl(url)
+{
+	for(var i in fonts){
+		if(fonts[i].url == url){
+			return fonts[i];
+		}
+	
+	}
+	return false;
+}
+
+
 
 resizeImages();
 window.onresize = resizeImages;
