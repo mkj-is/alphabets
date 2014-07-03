@@ -151,6 +151,7 @@ window.onload = function() {
   //remove disabled from inputs
   document.getElementById("message").removeAttribute("disabled");
   document.getElementById("font").removeAttribute("disabled");
+  document.getElementById("download_button").innerHTML = "Download as JPEG";
   
   // set font in select
   for(var i in fonts){

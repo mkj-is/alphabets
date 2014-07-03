@@ -17,6 +17,6 @@ function canvasMergeImages(files, width, height, completed)
 		ctx.drawImage(image, x, 0, image.width, image.height);
 		x+=image.width;
 	}
-	var output = canvas.toDataURL("image/jpeg");
+	var output = canvas.toDataURL("image/jpeg", 1);
 	completed(output);
 }
