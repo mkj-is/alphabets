@@ -22,9 +22,8 @@
  </head>
  <body id="body">
   <form onsubmit="onSubmit(); return false;">
-   <input id="message" disabled type="text" autofocus autocomplete="off" autocorrect="off" placeholder="LOADING..." onkeyup="onSubmit(); setHash();" spellcheck="false" />
+   <input id="message" disabled type="text" maxlength="15" autofocus autocomplete="off" autocorrect="off" placeholder="LOADING..." onkeyup="onSubmit(); setHash();" spellcheck="false" />
    <select id="font" disabled onchange="onSelect(this);">
-     <option>Loading...</option>
    </select>
   </form>
   <div id="letters"></div>

@@ -151,6 +151,15 @@ window.onload = function() {
   //remove disabled from inputs
   document.getElementById("message").removeAttribute("disabled");
   document.getElementById("font").removeAttribute("disabled");
+  
+  // set font in select
+  for(var i in fonts){
+	var f = fonts[i];
+	if(f.url == font.url){
+	  select.value = i;
+	  break;
+	}
+  }
 }
 
 // RESIZES IMAGES (image height = window height)
