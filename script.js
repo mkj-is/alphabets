@@ -85,12 +85,12 @@ function onSubmit() {
     var image = new Image();
     image.src = src;
     image.onload = function() {
-		resize();
-		resizeImages();
+    resize();
+    resizeImages();
     }
     container.appendChild(image);
   }
-	resizeImages();
+  resizeImages();
 
 }
 
@@ -135,9 +135,7 @@ function onSelect(node){
 fonts = shuffle(fonts);
 var font = fonts[0];
 preload(font.url);
-
 window.onload = function() {
-  
   var select = document.getElementById('font');
   select.innerHTML = "<option>Choose your font...</option>";
   for (var i in fonts) {
@@ -148,54 +146,55 @@ window.onload = function() {
   updateFromHash();
   onSubmit();
   metadata();
+  resizeImages();
+  window.onresize = resizeImages;
 }
 
+// RESIZES IMAGES (image height = window height)
 var resizeImages = function() {
-	var images = document.getElementsByTagName("img");	
-	var height = document.documentElement.clientHeight;
-	for (var i = 0; i < images.length; i++) {
-		var image = images[i];
-		image.style.height = height + "px";
-	}
+  var images = document.getElementsByTagName("img");  
+  var height = document.documentElement.clientHeight;
+  for (var i = 0; i < images.length; i++) {
+    var image = images[i];
+    image.style.height = height + "px";
+  }
 }
 
+// SETS HASH ACCORDING TO THE CHOSEN FONT AND TEXT
 function setHash(){
-	var text = document.getElementById("message").value;
-	if(!text) return;
-	window.location.hash = font.url + "/" + Url.encode(text);
+  var text = document.getElementById("message").value;
+  if(!text) return;
+  window.location.hash = font.url + "/" + Url.encode(text);
 }
 
+// UPDATES CURRENT TEXT AND FONT FROM URL HASH
 function updateFromHash()
 {
-	if(window.location.hash == "") return;
-	
-	var parts = window.location.hash.split("/", 2);
-	if(!(parts[0] && parts[1])) return;
-	
-	var f = parts[0];
-	var t = parts[1];
-	f = f.substr(1, f.length - 1);
-	document.getElementById("message").value = Url.decode(t);
-	
-	var found = findFontByUrl(f);
-	if(found){
-		font = found;
-	}
+  if(window.location.hash == "") return;
+  
+  var parts = window.location.hash.split("/", 2);
+  if(!(parts[0] && parts[1])) return;
+  
+  var f = parts[0];
+  var t = parts[1];
+  f = f.substr(1, f.length - 1);
+  document.getElementById("message").value = Url.decode(t);
+  
+  var found = findFontByUrl(f);
+  if(found){
+    font = found;
+  }
 
 }
 
+// FINDS FONT IN OUR ARRAY
 function findFontByUrl(url)
 {
-	for(var i in fonts){
-		if(fonts[i].url == url){
-			return fonts[i];
-		}
-	
-	}
-	return false;
+  for(var i in fonts){
+    if(fonts[i].url == url){
+      return fonts[i];
+    }
+  }
+  return false;
 }
 
-
-
-resizeImages();
-window.onresize = resizeImages;
