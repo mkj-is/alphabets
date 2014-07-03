@@ -210,3 +210,21 @@ function findFontByUrl(url)
   return false;
 }
 
+// DOWNLOADS IMAGE
+function downloadText()
+{
+	if(!isCanvasSupported()){
+		alert("Downloading not supported. Update to modern browser with CANVAS support.");
+		return;
+	}
+	var m = document.getElementById("message").value;
+	var letters = document.getElementById("letters");
+	var images = document.getElementById("letters").childNodes;
+	canvasMergeImages(images, letters.offsetWidth - 10, letters.offsetHeight - 5, function(jpeg){
+		//window.open(jpeg, "_blank");
+		document.getElementById("download_button").setAttribute("href", jpeg);
+		document.getElementById("download_button").setAttribute("download", m + ".jpg");
+	});
+
+}
+

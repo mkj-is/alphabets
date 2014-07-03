@@ -29,6 +29,18 @@ input {
   border: none;
   outline: none;
 }
+#download_button{
+  position: fixed;
+  height: 1.5em;
+  bottom: 1.5em;
+  left: 1.5em;
+  font-size: 1em;
+  text-align: left;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  text-decoration:none;
+}
 #author {
   position: fixed;
   height: 1.5em;
@@ -48,6 +60,7 @@ select {
   height: 1.5em;
   top: 1.5em;
   right: 1.5em;
+  width:11em;
   font-size: 1em;
   text-align: right;
   border: none;
