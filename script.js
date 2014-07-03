@@ -148,8 +148,9 @@ window.onload = function() {
   metadata();
   resizeImages();
   window.onresize = resizeImages;
-  //remove disabled from input
+  //remove disabled from inputs
   document.getElementById("message").removeAttribute("disabled");
+  document.getElementById("font").removeAttribute("disabled");
 }
 
 // RESIZES IMAGES (image height = window height)
