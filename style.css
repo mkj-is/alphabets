@@ -71,3 +71,16 @@ select {
 .light {
   background-color: white;
 }
+::-webkit-scrollbar { 
+	height:10px;
+	background-color:transparent;
+}
+::-webkit-scrollbar-button { 
+	width:10px;
+}
+body.light::-webkit-scrollbar-thumb,body.light::-webkit-scrollbar-button { 
+	background-color:#000;
+}
+body.dark::-webkit-scrollbar-thumb,body.dark::-webkit-scrollbar-button { 
+	background-color:#fff;
+}
