@@ -108,6 +108,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Lampa Type",
+    url: "lampa",
+    author: 'Jiří Starý',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
