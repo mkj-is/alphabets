@@ -96,6 +96,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "Alone Type",
+    url: "alone",
+    author: 'Tomáš Kácel',
+    color: 'light'
+  },
+  {
     name: "NE Font",
     url: "ne",
     author: 'Dominika Baníková, Jiří Gerat, Anna Kiliánová, Henrik Lauko',
