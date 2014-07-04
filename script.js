@@ -46,6 +46,12 @@ var fonts = [
     url: "mouka",
     author: 'Jana Ludvíková',
     color: 'light'
+  },
+  {
+    name: "Eat It",
+    url: "eat-it",
+    author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
+    color: 'light'
   }
 ];
 
