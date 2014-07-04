@@ -48,6 +48,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "Káva Type",
+    url: "kava",
+    author: 'Martina Marešová',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
