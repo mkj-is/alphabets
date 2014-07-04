@@ -54,6 +54,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Maru Type",
+    url: "maru",
+    author: 'Marie Lukášová',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
