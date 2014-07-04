@@ -157,13 +157,13 @@ function onSubmit() {
     var image = new Image();
     image.src = src;
     image.onload = function() {
-    resize();
     resizeImages();
+    resize();
     }
     container.appendChild(image);
   }
   resizeImages();
-
+  resize();
 }
 
 
@@ -216,6 +216,7 @@ window.onload = function() {
   onSubmit();
   metadata();
   resizeImages();
+  resize();
   window.onresize = resizeImages;
   //remove disabled from inputs
   document.getElementById("message").removeAttribute("disabled");
@@ -238,7 +239,11 @@ var resizeImages = function() {
   var height = document.documentElement.clientHeight;
   for (var i = 0; i < images.length; i++) {
     var image = images[i];
+	var ratio = image.width / image.height;
+	if(isNaN(ratio)) continue;
+	var width = height * ratio;
     image.style.height = height + "px";
+    image.style.width = width + "px";
   }
 }
 
