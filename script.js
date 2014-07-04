@@ -158,9 +158,6 @@ function resize() {
     var node = container.childNodes[i];
     w += node.offsetWidth;
   }
-  // add some width
-  w += 10;
-
   container.style.width = w + "px";
 }
 
