@@ -84,6 +84,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Mark Me Font",
+    url: "mark-me",
+    author: 'Andrea Mužíková',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
