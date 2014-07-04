@@ -66,6 +66,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "Strawberdose Font",
+    url: "strawberdose",
+    author: 'Patrik Slamka, Martin Havlíček',
+    color: 'light'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
