@@ -36,6 +36,7 @@ input {
   left: 1.5em;
   font-size: 1em;
   text-align: left;
+  width:12em;
   -webkit-appearance:none;
   -moz-appearance:none;
   appearance:none;
@@ -47,6 +48,7 @@ input {
   bottom: 1.5em;
   right: 2em;
   font-size: 1em;
+  width:30em;
   text-align: right;
 }
 a:hover {
