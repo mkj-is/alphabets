@@ -78,6 +78,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "Huge Font",
+    url: "huge",
+    author: 'Jiří Gerat',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
