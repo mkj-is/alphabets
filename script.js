@@ -90,6 +90,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Money Font",
+    url: "money",
+    author: 'Ema Šturalová',
+    color: 'light'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
