@@ -72,6 +72,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "Towel Type",
+    url: "towel",
+    author: 'Jakub Špiřík, Martina Krasnayová',
+    color: 'light'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
