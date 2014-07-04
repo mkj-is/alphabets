@@ -121,6 +121,8 @@ var fonts = [
   }
 ];
 
+var currentText = "";
+
 // shuffles an array
 function shuffle(o){
   for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -141,8 +143,20 @@ function onSubmit() {
   var text = document.getElementById("message").value;
   text = text.toUpperCase();
   var container = document.getElementById("letters");
-  container.innerHTML = '';
+  var skip = 0;
+  for (var i = 0; i < currentText.length; i++) {
+	if(currentText[i] != text[i]){
+		skip = i;
+	}  
+  }
+  if(skip <= currentText.length || text.length < currentText)
+  {
+	container.innerHTML = '';
+	skip = 0;
+  }
+  
   for (var i = 0; i < text.length; i++) {
+	if(i < skip) continue;
     var character = text.charAt(i);
     var regexp = /[a-zA-Z ]/;
     if (!regexp.test(character)) {
@@ -164,6 +178,7 @@ function onSubmit() {
   }
   resizeImages();
   resize();
+  currentText = text;
 }
 
 
@@ -177,6 +192,23 @@ function resize() {
     w += node.offsetWidth;
   }
   container.style.width = w + "px";
+   
+   // scroll body
+   /*
+  var body = document.getElementById("body");
+  var winWidth = document.documentElement.clientWidth;
+  var scrollLeft = body.scrollLeft;// 
+  var newLeft = 0;
+   for(var i = 0; i < container.childNodes.length; i++) {
+    var node = container.childNodes[i];
+    w += node.offsetWidth;
+    if(winWidth + scrollLeft < w){
+		newLeft = w - winWidth;
+	}	
+  }
+  if(newLeft != 0){
+	body.scrollLeft = newLeft;
+  }*/
 }
 
 
