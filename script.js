@@ -60,6 +60,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Alergie Font",
+    url: "alergie",
+    author: 'Richard Záň',
+    color: 'light'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
