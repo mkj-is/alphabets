@@ -96,6 +96,12 @@ var fonts = [
     color: 'light'
   },
   {
+    name: "NE Font",
+    url: "ne",
+    author: 'Dominika Baníková, Jiří Gerat, Anna Kiliánová, Henrik Lauko',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
