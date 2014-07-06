@@ -1,4 +1,4 @@
-body,html{
+body, html {
   padding: 0px;
   margin: 0px;
 }
@@ -73,7 +73,7 @@ select {
   background-color: inherit;
 }
 .dark select option{
-	background-color:black;
+  background-color:black;
 }
 .dark, .dark input, .dark select, .dark a, .dark a:visited {
   color: white;
@@ -88,15 +88,15 @@ select {
   background-color: white;
 }
 ::-webkit-scrollbar { 
-	height:10px;
-	background-color:transparent;
+  height:10px;
+  background-color:transparent;
 }
 ::-webkit-scrollbar-button { 
-	width:10px;
+  width:10px;
 }
 body.light::-webkit-scrollbar-thumb,body.light::-webkit-scrollbar-button { 
-	background-color:#000;
+  background-color:#000;
 }
 body.dark::-webkit-scrollbar-thumb,body.dark::-webkit-scrollbar-button { 
-	background-color:#fff;
+  background-color:#fff;
 }
