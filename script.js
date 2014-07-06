@@ -264,6 +264,7 @@ function setHash(){
   var text = document.getElementById("message").value;
   if(!text) return;
   window.location.hash = font.url + "/" + Url.encode(text);
+  ga('send', 'show', font.url, text, {'page': '/' + window.location.hash});
 }
 
 // UPDATES CURRENT TEXT AND FONT FROM URL HASH
