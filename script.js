@@ -145,18 +145,18 @@ function onSubmit() {
   var container = document.getElementById("letters");
   var skip = 0;
   for (var i = 0; i < currentText.length; i++) {
-	if(currentText[i] != text[i]){
-		skip = i;
-	}  
+    if(currentText[i] != text[i]){
+      skip = i;
+    }
   }
   if(skip <= currentText.length || text.length < currentText)
   {
-	container.innerHTML = '';
-	skip = 0;
+    container.innerHTML = '';
+    skip = 0;
   }
   
   for (var i = 0; i < text.length; i++) {
-	if(i < skip) continue;
+    if(i < skip) continue;
     var character = text.charAt(i);
     var regexp = /[a-zA-Z ]/;
     if (!regexp.test(character)) {
@@ -171,17 +171,16 @@ function onSubmit() {
     var image = new Image();
     image.src = src;
     image.onload = function() {
-    resizeImages();
-    resize();
+      resizeImages();
+      resize();
     }
     container.appendChild(image);
   }
   resizeImages();
   resize();
   currentText = text;
+  setHash();
 }
-
-
 
 // when the images are changed
 function resize() {
@@ -192,23 +191,6 @@ function resize() {
     w += node.offsetWidth;
   }
   container.style.width = w + "px";
-   
-   // scroll body
-   /*
-  var body = document.getElementById("body");
-  var winWidth = document.documentElement.clientWidth;
-  var scrollLeft = body.scrollLeft;// 
-  var newLeft = 0;
-   for(var i = 0; i < container.childNodes.length; i++) {
-    var node = container.childNodes[i];
-    w += node.offsetWidth;
-    if(winWidth + scrollLeft < w){
-		newLeft = w - winWidth;
-	}	
-  }
-  if(newLeft != 0){
-	body.scrollLeft = newLeft;
-  }*/
 }
 
 
@@ -228,8 +210,6 @@ function onSelect(node){
   metadata();
   // focus on text to prevent scrolling in select
   document.getElementById("message").focus();
-  // setHash
-  setHash();
 }
 
  // script on webpage load
