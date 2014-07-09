@@ -141,6 +141,7 @@ function preload(font) {
 // on submitting the input
 function onSubmit() {
   var text = document.getElementById("message").value;
+  text = trim_diacritics(text);
   text = text.toUpperCase();
   var container = document.getElementById("letters");
   var skip = 0;
