@@ -317,3 +317,16 @@ function downloadText()
 
 }
 
+// toggles the select
+function openSelect(id){
+    var element = document.getElementById(id);
+    if (document.createEvent) {
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        element.dispatchEvent(e);
+    } else if (element.fireEvent) {
+        element.fireEvent("onmousedown");
+    }
+}
+
+

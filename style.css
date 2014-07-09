@@ -72,7 +72,16 @@ select {
   outline: none;
   background-color: inherit;
 }
-.dark select option{
+#triangle {
+  position: fixed;
+  height: 1em;
+  top: 1.7em;
+  right: 13em;
+  width:2em;
+  font-size: 1em;
+  text-align: right;
+}
+.dark select option {
   background-color:black;
 }
 .dark, .dark input, .dark select, .dark a, .dark a:visited {
