@@ -253,7 +253,14 @@ var resizeImages = function() {
   for (var i = 0; i < images.length; i++) {
     var image = images[i];
 	var ratio = image.width / image.height;
-	if(isNaN(ratio)) continue;
+	// not loaded? hide!
+	if(isNaN(ratio)){
+		image.style.opacity = "0";
+		document.body.style.cursor = "wait";
+		continue;
+	}
+	image.style.opacity = "1";
+	document.body.style.cursor = "auto";
 	var width = height * ratio;
     image.style.height = height + "px";
     image.style.width = width + "px";
