@@ -211,12 +211,14 @@ function onSelect(node){
   metadata();
   // focus on text to prevent scrolling in select
   document.getElementById("message").focus();
+  // preload new font
+  preload(font.url);
 }
 
  // script on webpage load
 fonts = shuffle(fonts);
 var font = fonts[0];
-preload(font.url);
+
 window.onload = function() {
   var select = document.getElementById('font');
   select.innerHTML = "<option>Choose your font...</option>";
@@ -235,6 +237,7 @@ window.onload = function() {
   document.getElementById("message").removeAttribute("disabled");
   document.getElementById("font").removeAttribute("disabled");
   document.getElementById("download_button").innerHTML = "Download as JPEG";
+
   
   // set font in select
   for(var i in fonts){
@@ -244,6 +247,9 @@ window.onload = function() {
 	  break;
 	}
   }
+  
+  // preload new font
+  preload(font.url);
 }
 
 // RESIZES IMAGES (image height = window height)
