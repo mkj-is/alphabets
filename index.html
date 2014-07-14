@@ -36,11 +36,11 @@
   // loading animation
   var msg = document.getElementById("message");
   var anim = setInterval(function(){
-    var p = msg.getAttribute("placeholder");
-    if(p.length >= 15){
+    var p = msg.getAttribute("placeholder") + ".";
+    if(p.length >= 22){
       p = "LOADING";
     }
-    msg.setAttribute("placeholder", p + ".");
+    msg.setAttribute("placeholder", p);
   },150);
   window.addEventListener('load', function() {
     clearInterval(anim);
