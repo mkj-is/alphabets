@@ -218,6 +218,9 @@ function onSelect(node){
  // script on webpage load
 fonts = shuffle(fonts);
 var font = fonts[0];
+if(window.location.hash == ""){ // preload only when no text selected
+ preload(font.url);
+}
 
 window.onload = function() {
   var select = document.getElementById('font');
@@ -248,8 +251,8 @@ window.onload = function() {
 	}
   }
   
-  // preload new font
-  preload(font.url);
+
+
 }
 
 // RESIZES IMAGES (image height = window height)
@@ -297,6 +300,7 @@ function updateFromHash()
   var found = findFontByUrl(f);
   if(found){
     font = found;
+    preload(font.url);
   }
 
 }
