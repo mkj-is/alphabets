@@ -114,6 +114,12 @@ var fonts = [
     color: 'dark'
   },
   {
+    name: "Potatype",
+    url: "potatype",
+    author: 'Kryštof Zvolánek',
+    color: 'dark'
+  },
+  {
     name: "Eat It",
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
