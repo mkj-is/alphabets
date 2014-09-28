@@ -124,6 +124,12 @@ var fonts = [
     url: "eat-it",
     author: 'Martina Krasnayová, Jakub Špiřík, Gabriela Véghová',
     color: 'light'
+  },
+  {
+    name: "Bodytype",
+    url: "bodytype",
+    author: 'Gabriela Véghová',
+    color: 'light'
   }
 ];
 
